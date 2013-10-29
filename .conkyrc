@@ -1,0 +1,35 @@
+b#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Sans:size=8
+
+######################
+# - Conky settings - #
+######################
+xftalpha 0.9
+update_interval 1
+net_avg_samples 1
+cpu_avg_samples 1
+total_run_times 0
+double_buffer yes
+
+#############################
+# - Window specifications - #
+#############################
+alignment top_left
+gap_x 5
+gap_y 5
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+
+default_color white
+default_shade_color red
+color1 blue
+
+
+TEXT
+${font Sans:bold:size=8}${color}[]${font}${color1}$time${font Sans:bold:size=8}${color}[]Uptime:${font}${color1}$uptime${font Sans:bold:size=8}${color}[]CPU1:${font}${color1}${cpu cpu1}%${font Sans:bold:size=8}${color}[]CPU2:${font}${color1}${cpu cpu2}%${font Sans:bold:size=8}${color}@${font}${color1}${exec sensors | grep 'Core 0' | cut -c16-20}${color}${font}'C ${font Sans:bold:size=8}${color}[]RAM:${font}${color1}${memperc}%${font Sans:bold:size=8}${color}(${font}${color1}${mem}${font Sans:bold:size=8}${color}/${font}${color1}${memmax}${font Sans:bold:size=8}${color})[]Root:${font}${color1}${fs_used_perc /}%${font Sans:bold:size=8}${color}(${font}${color1}${fs_used /}${font Sans:bold:size=8}${color}/${font}${color1}${fs_size /}${font Sans:bold:size=8}${color})[]Home:${font}${color1}${fs_used_perc /home/}%${font Sans:bold:size=8}${color}(${font}${color1}${fs_used /home/}${font Sans:bold:size=8}${color}/${font}${color1}${fs_size /home/}${font Sans:bold:size=8}${color})${if_up wlp6s0}${font Sans:bold:size=8}${color}[]Down:${font}${color1}${downspeed wlp6s0}${font Sans:bold:size=8}${color}[]Up:${font}${color1}${upspeed wlp6s0}${font Sans:bold:size=8}${color}[]Signal:${font}${color1}${wireless_link_qual wlp6s0}%${color} ${downspeedgraph wlp6s0 8,60 82B6F1 CCDFFF} ${else}${if_up enp2s0}${font Sans:bold:size=8}${color}[]Down:${font}${color1}${downspeed enp2s0}${font Sans:bold:size=8}${color}[]Up:${font}${color1}${upspeed enp2s0}${downspeedgraph enp2s0 8,60 82B6F1 CCDFFF}
