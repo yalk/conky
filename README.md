@@ -19,10 +19,14 @@ Note:
 For conky to be able 
 1. Run
       You need to first install the "conky-all" package which should be available on the official repositories of most of the Linux distributions
+      Save the .conkyrc file in your /home/USERNAME/ folder, run "conky" from the terminal.
+      To run conky at startup, edit your /home/USERNAME/.bashrc and just add "conky" at the bottom (preferable create a delay of 10-15secs depending on your computer)
+
 2. Detect temperature of CPU Cores
       A. Install "lm-sensors", should be available on the official repositories of most of the Linux distributions
       B. Run "cat /proc/cpuinfo" (without quotes) on the terminal to get details about your cores and accordingly add in .conkyrc file, add the temperature command (exec sensors | grep 'Core 0' | cut -c16-20) on as many real cores (eg Core0, Core1) as you have
           Note: "cut -c16-20" is to convert the temperate into 'C, if you want it in 'F, remove it
+
 3. Monitoring network
     To monitor network you need to add corect interfaces to the commands run "iwconfig" or "ifconfig" depending on your Linux distribution and replace wlp6s0(wireless interface) and enp6s(ethernet interface) with the appropriate interface
     Eg. ${font}${color1}${upspeed wlp6s0} will become ${font}${color1}${upspeed wlan0}
