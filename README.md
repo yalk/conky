@@ -27,4 +27,4 @@ For conky to be able
     To monitor network you need to add corect interfaces to the commands run "iwconfig" or "ifconfig" depending on your Linux distribution and replace wlp6s0(wireless interface) and enp6s(ethernet interface) with the appropriate interface
     Eg. ${font}${color1}${upspeed wlp6s0} will become ${font}${color1}${upspeed wlan0}
 
-You are free to modify this code, for details on more commands you can run refer: 
+You are free to modify this code, for details on more commands you can run refer the guide
